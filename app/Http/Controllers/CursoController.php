@@ -9,7 +9,6 @@ class CursoController extends Controller
 {
     public function index(){
         $cursos = Curso::all();
-
         return view('curso.index', compact('cursos'));
     }
 
@@ -25,6 +24,11 @@ class CursoController extends Controller
             $curso->fill($request->all());
         } else {
             $curso = new Curso($request->all());
+        }
+
+
+        if($request->hasFile('arquivo')) {
+            $curso->arquivo = $request->arquivo->store('cursos');
         }
 
         $curso->save();
@@ -48,5 +52,15 @@ class CursoController extends Controller
         $cursos = Curso::all();
 
         return view('curso.loop', compact('cursos'));
+    }
+
+    public function verificarNome($nome)
+    {
+        return Curso::where('nome', $nome)->count();
+    }
+
+    public function verificarCodigo($codigo)
+    {
+        return Curso::where('codigo', $codigo)->count();
     }
 }

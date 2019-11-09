@@ -353,7 +353,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/disciplinas">
+                    <a href="/disciplina">
                         <i class="fa fa-th"></i> <span>Disciplinas</span>
                     </a>
                 </li>
@@ -423,9 +423,6 @@
 <script src="{{asset('adminlte/dist/js/pages/dashboard.js')}}"></script>
 
 
-
-
-
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('adminlte/dist/js/demo.js')}}"></script>
 
@@ -434,6 +431,8 @@
         $('.datatable').DataTable()
     })
 </script>
+
+
 
 </body>
 </html>

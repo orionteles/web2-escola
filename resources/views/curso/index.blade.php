@@ -20,6 +20,7 @@
                                     <th>Ações</th>
                                     <th>Nome</th>
                                     <th>Duração</th>
+                                    <th>Foto</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -35,6 +36,11 @@
                                         </td>
                                         <td>{{$curso->nome}}</td>
                                         <td>{{$curso->duracao}}</td>
+                                        <td>
+                                            @if($curso->arquivo)
+                                                <img width="100px" src="{{url('storage/' . $curso->arquivo)}}">
+                                            @endif
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Curso;
 use App\Disciplina;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,9 @@ class DisciplinaController extends Controller
 
     public function create(){
         $disciplina = new Disciplina();
-        return view('disciplina.formulario', compact('disciplina'));
+        $cursos = Curso::all();
+
+        return view('disciplina.formulario', compact('disciplina', 'cursos'));
     }
 
     public function store(Request $request)

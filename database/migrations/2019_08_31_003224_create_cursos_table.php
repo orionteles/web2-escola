@@ -18,6 +18,7 @@ class CreateCursosTable extends Migration
             $table->string('nome', 50);
             $table->string('codigo', 10);
             $table->integer('duracao');
+            $table->string('arquivo', 200)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

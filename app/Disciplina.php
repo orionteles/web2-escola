@@ -11,5 +11,9 @@ class Disciplina extends Model
 
     protected $fillable = ['nome', 'curso_id'];
     protected $dates = ['deleted_at'];
-
+    
+    public function curso()
+    {
+        return $this->belongsTo('\App\Curso');
+    }
 }

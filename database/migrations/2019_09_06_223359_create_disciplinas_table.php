@@ -17,7 +17,7 @@ class CreateDisciplinasTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome', 30);
             $table->bigInteger('curso_id')->unsigned();
-            $table->foreign('curso_id')->references('id')->on('cursos');
+            $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

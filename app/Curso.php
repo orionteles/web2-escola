@@ -11,4 +11,9 @@ class Curso extends Model
 
     protected $fillable = ['nome', 'codigo', 'duracao'];
     protected $dates = ['deleted_at'];
+
+    public function disciplinas()
+    {
+        return $this->hasMany('\App\Disciplina');
+    }
 }
